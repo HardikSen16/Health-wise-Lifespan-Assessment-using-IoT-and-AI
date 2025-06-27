@@ -1,5 +1,5 @@
-Here are four objectives for the "Health-wise Lifespan Assessment using IoT and AI tools" project:
-Data-Driven Health Monitoring and Analysis: Develop an integrated IoT system to monitor key health parameters such as physical activity, diet, sleep, and harmful habits, providing real-time insights into an individual’s health status.
-Predictive Lifespan Assessment Using AI: Design and implement AI models to predict health risks and lifespan trends based on lifestyle habits, food intake, and sensor data, with the goal of promoting early intervention and healthier choices.
-Personalized Health Recommendations: Build an AI-driven recommendation system that provides tailored lifestyle improvement suggestions (e.g., dietary adjustments, exercise routines) to enhance longevity and overall well-being.
-Seamless User Engagement and Accessibility: Create a user-friendly application that integrates IoT-based data collection with AI analytics, enabling real-time access to health insights and fostering long-term user engagement through gamification and community benchmarking.
+# Here are four objectives for the "Health-wise Lifespan Assessment using IoT and AI tools" project:
+1. Data-Driven Health Monitoring and Analysis: Develop an integrated IoT system to monitor key health parameters such as physical activity, diet, sleep, and harmful habits, providing real-time insights into an individual’s health status.
+2. Predictive Lifespan Assessment Using AI: Design and implement AI models to predict health risks and lifespan trends based on lifestyle habits, food intake, and sensor data, with the goal of promoting early intervention and healthier choices.
+3. Personalized Health Recommendations: Build an AI-driven recommendation system that provides tailored lifestyle improvement suggestions (e.g., dietary adjustments, exercise routines) to enhance longevity and overall well-being.
+4. Seamless User Engagement and Accessibility: Create a user-friendly application that integrates IoT-based data collection with AI analytics, enabling real-time access to health insights and fostering long-term user engagement through gamification and community benchmarking.
