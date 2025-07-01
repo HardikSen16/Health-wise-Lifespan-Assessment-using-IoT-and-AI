@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction & Chat</title>
+    <link rel="stylesheet" href="style_for_prediction_chat_page.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="prediction-box" id="predictionBox">
+        Predicted Life Expectancy: Loading...
+    </div>
+
+    <div class="chat-box" id="chatBox">
+        <!-- Chatbot initial message will appear here -->
+    </div>
+
+    <div class="input-box">
+        <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    <script src="script_for_prediction_chat_page.js"></script>
+</body>
+</html>

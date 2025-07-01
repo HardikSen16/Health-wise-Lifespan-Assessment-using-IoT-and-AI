@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WellSpan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <h3>Welcome to</h3>
+        <h1>WellSpan</h1>
+        <h2>Helping you take control of your health, unlock your best self with science-backed health recommendations</h2>
+        <p>Discover insights about your lifespan based on your lifestyle and health habits.</p>
+        <button class="btn" onclick="openForm()">Get Your Lifespan</button>
+    </div>
+
+    <!-- Popup Form -->
+    <div id="popup" class="popup">
+        <h2>Life Expectancy Predictor</h2>
+        <form id="predictionForm">
+            <input type="number" id="age" placeholder="Age" min="0" required>
+            <select id="country" required>
+                <option value="">Select Country</option>
+                <option value="Australia">Australia</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Canada">Canada</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="South Africa">South Africa</option>
+            </select>
+            <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <input type="number" id="exercise" placeholder="Exercise Hours per Week" min="0" required>
+            <select id="diet" required>
+                <option value="">Select Diet Type</option>
+                <option value="Healthy">Healthy</option>
+                <option value="Balanced">Balanced</option>
+                <option value="Unhealthy">Unhealthy</option>
+            </select>
+            <select id="medical" required>
+                <option value="">Select Medical History</option>
+                <option value="Fit">Fit</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Diabetes">Diabetes</option>
+                <option value="Asthma">Asthma</option>
+                <option value="HIV/AIDS">HIV/AIDS</option>
+                <option value="Heart Disease">Heart Disease</option>
+                <option value="Kidney & Liver Diseases">Kidney & Liver Diseases</option>
+            </select>
+            <select id="stress" required>
+                <option value="">Select Work Stress Level</option>
+                <option value="Low">Low</option>
+                <option value="Moderate">Moderate</option>
+                <option value="High">High</option>
+            </select>
+            <select id="smoking" required>
+                <option value="">Select Smoking Level</option>
+                <option value="Never">Never</option>
+                <option value="Low">Low</option>
+                <option value="Moderate">Moderate</option>
+                <option value="High">High</option>
+            </select>
+            <select id="alcohol" required>
+                <option value="">Select Alcohol Consumption</option>
+                <option value="Never">Never</option>
+                <option value="Low">Low</option>
+                <option value="Moderate">Moderate</option>
+                <option value="High">High</option>
+            </select>
+            <select id="social" required>
+                <option value="">Select Social Life Level</option>
+                <option value="Low">Low</option>
+                <option value="Moderate">Moderate</option>
+                <option value="High">High</option>
+            </select>
+            <div style="margin-bottom: 10px;">
+            <input type="number" id="height" placeholder="Height (cm)" min="50" max="250">
+            <input type="number" id="weight" placeholder="Weight (kg)" min="10" max="300">
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+            </div>
+            <input type="number" id="bmi" placeholder="BMI" min="2" max="204" required readonly>
+            <input type="number" id="sleep" placeholder="Sleep Hours (1-24)" min="1" max="24" required>
+            <input type="number" id="heartRate" placeholder="Heart Rate (bpm)" min="27" max="480" step="0.1" required>
+            <input type="number" id="spo2" placeholder="SpO2 Level (%)" min="6" max="100"step="0.1" required>
+            <input type="number" id="temperature" placeholder="Body Temperature (°C)" min="13" max="50" step="0.1" required>
+            
+            <button type="button" onclick="populateFormWithFirebaseData()">Fetch My Health Stats</button>
+            <button type="submit">Predict</button>
+        </form>
+        <button class="close-btn" onclick="closeForm()">Close</button>
+        <h3 id="result"></h3>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
