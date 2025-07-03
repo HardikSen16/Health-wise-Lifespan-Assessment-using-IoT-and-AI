@@ -9,7 +9,7 @@ const char* ssid     = "ROG_Phone3";
 const char* password = "123456789";
 
 // === Firebase configuration ===
-#define FIREBASE_URL "https://wellspan-ec001-default-rtdb.firebaseio.com/health.json"
+#define FIREBASE_URL "***************************"
 
 // === Timing intervals ===
 #define REPORTING_PERIOD_MS 500    // Sensor print interval
@@ -28,7 +28,7 @@ uint32_t tsLastReport = 0;      // timestamp for serial printing
 
 // Callback: called on heartbeat detection
 void onBeatDetected() {
-    Serial.println("💓 Beat Detected!");
+    Serial.println("Beat Detected!");
 }
 
 // -----------------------------------------------------------------------------
@@ -56,13 +56,13 @@ void httpUploadTask(void* parameter) {
 
             int httpCode = http.PUT(payload);
             if (httpCode > 0) {
-                Serial.printf("✅ Firebase upload response: %d\n", httpCode);
+                Serial.printf("Firebase upload response: %d\n", httpCode);
             } else {
-                Serial.printf("❌ Firebase upload failed, code: %d\n", httpCode);
+                Serial.printf("Firebase upload failed, code: %d\n", httpCode);
             }
             http.end();
         } else {
-            Serial.println("❌ WiFi disconnected, cannot upload");
+            Serial.println("WiFi disconnected, cannot upload");
         }
         vTaskDelay(delayTicks);
     }
@@ -84,26 +84,26 @@ void setup() {
         Serial.print(".");
     }
     Serial.println();
-    Serial.print("✅ WiFi connected, IP: ");
+    Serial.print("WiFi connected, IP: ");
     Serial.println(WiFi.localIP());
 
     // Initialize Pulse Oximeter (MAX30100)
     Serial.print("Initializing Pulse Oximeter... ");
     if (!pox.begin()) {
-        Serial.println("❌ FAILED");
+        Serial.println("FAILED");
         for (;;) { /* Halt */ }
     }
-    Serial.println("✅ SUCCESS");
+    Serial.println("SUCCESS");
     pox.setIRLedCurrent(MAX30100_LED_CURR_14_2MA);
     pox.setOnBeatDetectedCallback(onBeatDetected);
 
     // Initialize MLX90614 temperature sensor on I2C port 1 (pins 16=SDA, 17=SCL)
     I2C_MLX.begin(16, 17);
     if (!mlx.begin(0x5A, &I2C_MLX)) {
-        Serial.println("❌ MLX90614 init failed!");
+        Serial.println("MLX90614 init failed!");
         for (;;) { /* Halt */ }
     }
-    Serial.println("✅ Sensors initialized successfully");
+    Serial.println("Sensors initialized successfully");
 
     // Create HTTP upload task on core 1
     xTaskCreatePinnedToCore(
